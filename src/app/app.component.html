@@ -1,0 +1,19 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div *ngIF = "lesson$ | async as lesson"></div>
+  <h1> {{ lesson.title }} </h1> 
+  <time>
+      Published on {{ lesson.createdAt | date: 'fullDate' }}
+  </time>
+
+  <h3> Tags </h3>
+  <span *ngFor = "let tag of lesson.tags">
+    {{ tag }}
+  </span>
+
+  <div [innerHTML]="lesson.body | mdToHtml"> </div>
+
+
+
+
+
+
